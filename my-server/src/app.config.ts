@@ -13,6 +13,17 @@ import {
 import { MyRoom } from "./rooms/MyRoom.js";
 import { BattleshipRoom } from "./rooms/Battleship.js";
 
+import { matchMaker } from "colyseus";
+ 
+matchMaker.controller.DEFAULT_CORS_HEADERS = {
+    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Max-Age': '2592000',
+    // ...
+}
+
 const server = defineServer({
     /**
      * Define your room handlers:
